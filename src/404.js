@@ -1,10 +1,19 @@
+import {useState,useEffect} from "react";
+import Cookies from 'js-cookie';
 export default function Error() {
+  const [render, setrender] = useState(true);
   document.title = `Error - TheKoushikDurgas`;
   const errorjson = [
     {'icon':'tkd3-home1','link':'http://thekoushikdurgas.in/','title':'Homepage',},
     {'icon':'tkd11-search-engine','link':'http://thekoushikdurgas.in/dashboard/','title':'Search',},
     {'icon':'tkd9-helping-hands','link':'http://help.thekoushikdurgas.in/','title':'Help & Support',}
   ]
+  useEffect(() => {
+    if(render){
+      Cookies.set('priviousurl', 'http://404.thekoushikdurgas.in/', { path: '', domain: '.thekoushikdurgas.in' });
+      setrender(false);
+    }
+  }, [render]);
   return (
     <div className="w-full h-full grid justify-center leading-[1] gap-5 animate-[0.7s_ease_0s_1_normal_none_running_zoomin]">
       <div className="relative grid justify-items-center">

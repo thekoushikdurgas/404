@@ -5,10 +5,10 @@ import SunMoon from "./SunMoon";
 import Fullscreen from "./Fullscreen";
 
 export default function App() {
-  window.oncontextmenu = function () {
-    console.log("Right Click Disabled");
-    return false;
-  };
+  // window.oncontextmenu = function () {
+  //   console.log("Right Click Disabled");
+  //   return false;
+  // };
   return (
     <>
       <SunMoon />
